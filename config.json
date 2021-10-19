@@ -1,0 +1,11 @@
+{
+  "api_key": "23db3e87-e448-4d26-a4bd-129d4baa3040",
+  "url": {
+    "get_city_id_base": "https://website-api.airvisual.com/v1/routes/china/",
+    "get_current_air_data": "https://website-api.airvisual.com/v1/cities/",
+    "get_history_air_data": "https://website-api.airvisual.com/v1/cities/{}/measurements",
+    "get_supported_state": "http://api.airvisual.com/v2/states?country=China&key={}",
+    "get_supported_city": "http://api.airvisual.com/v2/cities?state={}&country=China&key={}"
+  },
+  "shenyang_city_id": "ieaeesdb5ajYXG5yv"
+}
