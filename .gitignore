@@ -1,0 +1,9 @@
+# IDE创建的目录
+.idea/
+
+# 不需要的文件
+*.html
+network/states_and_cities.json
+
+# 不需要的预编译文件
+*.pyi
