@@ -34,7 +34,6 @@ def get_history_air_data(city_id: str):
     with Path("./config.json").open(mode="r", encoding="UTF-8") as fp:
         config_data = json.load(fp)
         url = str(config_data["url"]["get_history_air_data"]).format(city_id)
-    print(url)
     response = requests.get(url)
     result = []
     for item in json.loads(response.content.decode("UTF-8"))["measurements"]["daily"]:

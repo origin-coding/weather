@@ -1,5 +1,6 @@
 # IDE创建的目录
 .idea/
+__pycache__/
 
 # 不需要的文件
 *.html
