@@ -7,7 +7,7 @@ conda create -n weather
 git clole https://github.com/jyjdal/weather.git
 cd weather
 conda activate weather
-pip install -r requirements.tx
+pip install -r requirements.txt
 ```
 ```shell
 # 运行项目
