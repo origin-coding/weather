@@ -11,8 +11,15 @@ from visualize import visualize_current_data, visualize_history_data
 
 
 class MainWidget(QWidget):
+    """
+    程序的主窗体类，用户按下查询按钮后的逻辑都在此实现
+    """
     def __init__(self):
         super().__init__()
+        # 设置窗体大小和标题
+        self.setFixedSize(300, 100)
+        self.setWindowTitle("空气质量查询系统")
+
         # 创建标签
         self.state_label = create_label("请输入省份：")
         self.state_label.move(0, 0)
@@ -44,6 +51,9 @@ class MainWidget(QWidget):
         self.history_data_graph = None
 
     def main_func(self):
+        """
+        应用程序的主题逻辑
+        """
         # 获取输入的省市
         state = self.state_edit.text().strip()
         city = self.city_edit.text().strip()
@@ -81,12 +91,19 @@ class MainWidget(QWidget):
         self.city_edit.clear()
 
 
-
-
 class GraphWidget(QWidget):
+    """
+    用于展现图表的窗体类
+    """
     def __init__(self, uri: str, region: str, current: bool):
+        """
+        窗体初始化函数
+        :param uri: 需要加载的html文件的位置，这里需要提供一个URI，也就是以file:///开头的位置
+        :param region: 展示空气数据所属的地区，直辖市为xxx市，非直辖市为xxx省xxx市
+        :param current: 是否为实时空气数据
+        """
         super().__init__()
-        # 设置窗体大小和标题
+        # 设置窗体大小和标题，大小设置为920x520是因为pyecharts生成的html文件主体大小为900x500
         self.setFixedSize(920, 520)
         self.setWindowTitle(f"{region}{'实时' if current else '历史'}空气质量数据")
 
